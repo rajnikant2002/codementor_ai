@@ -11,10 +11,9 @@ Future<void> main() async {
   } catch (_) {
     // Continue without a local secret file; GroqService has a safe fallback.
   }
-  runApp(ChangeNotifierProvider(
-    create: (_) => AppState(),
-    child: const MyApp(),
-  ));
+  runApp(
+    ChangeNotifierProvider(create: (_) => AppState(), child: const MyApp()),
+  );
 }
 
 class MyApp extends StatelessWidget {

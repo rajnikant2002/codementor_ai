@@ -67,31 +67,33 @@ class _SplashScreenState extends State<SplashScreen> {
                 child: Column(
                   mainAxisSize: MainAxisSize.min,
                   children: [
-                    Builder(builder: (context) {
-                      final logoBg = context.watch<AppState>().logoBgColor;
-                      return Container(
-                        height: 92,
-                        width: 92,
-                        decoration: BoxDecoration(
-                          color: logoBg,
-                          borderRadius: BorderRadius.circular(28),
-                          boxShadow: const [
-                            BoxShadow(
-                              color: Color(0x663B82F6),
-                              blurRadius: 30,
-                              offset: Offset(0, 18),
-                            ),
-                          ],
-                        ),
-                        child: Padding(
-                          padding: const EdgeInsets.all(14),
-                          child: Image.asset(
-                            'assets/ai_app_logo.png',
-                            fit: BoxFit.contain,
+                    Builder(
+                      builder: (context) {
+                        final logoBg = context.watch<AppState>().logoBgColor;
+                        return Container(
+                          height: 92,
+                          width: 92,
+                          decoration: BoxDecoration(
+                            color: logoBg,
+                            borderRadius: BorderRadius.circular(28),
+                            boxShadow: const [
+                              BoxShadow(
+                                color: Color(0x663B82F6),
+                                blurRadius: 30,
+                                offset: Offset(0, 18),
+                              ),
+                            ],
                           ),
-                        ),
-                      );
-                    }),
+                          child: Padding(
+                            padding: const EdgeInsets.all(14),
+                            child: Image.asset(
+                              'assets/ai_app_logo.png',
+                              fit: BoxFit.contain,
+                            ),
+                          ),
+                        );
+                      },
+                    ),
                     const SizedBox(height: 22),
                     const Text(
                       'CareerPilot AI',

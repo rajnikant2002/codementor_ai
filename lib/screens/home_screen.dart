@@ -35,24 +35,26 @@ class _HomeScreenState extends State<HomeScreen> {
                 children: [
                   Row(
                     children: [
-                      Builder(builder: (context) {
-                        final logoBg = context.watch<AppState>().logoBgColor;
-                        return Container(
-                          height: 48,
-                          width: 48,
-                          decoration: BoxDecoration(
-                            color: logoBg,
-                            borderRadius: BorderRadius.circular(16),
-                          ),
-                          child: Padding(
-                            padding: const EdgeInsets.all(7),
-                            child: Image.asset(
-                              'assets/ai_app_logo.png',
-                              fit: BoxFit.contain,
+                      Builder(
+                        builder: (context) {
+                          final logoBg = context.watch<AppState>().logoBgColor;
+                          return Container(
+                            height: 48,
+                            width: 48,
+                            decoration: BoxDecoration(
+                              color: logoBg,
+                              borderRadius: BorderRadius.circular(16),
                             ),
-                          ),
-                        );
-                      }),
+                            child: Padding(
+                              padding: const EdgeInsets.all(7),
+                              child: Image.asset(
+                                'assets/ai_app_logo.png',
+                                fit: BoxFit.contain,
+                              ),
+                            ),
+                          );
+                        },
+                      ),
                       const SizedBox(width: 14),
                       const Expanded(
                         child: Column(
