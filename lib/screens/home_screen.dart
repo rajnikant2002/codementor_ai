@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 import '../models/career_tool.dart';
 import 'tool_input_screen.dart';
+import '../providers/app_state.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -33,25 +35,24 @@ class _HomeScreenState extends State<HomeScreen> {
                 children: [
                   Row(
                     children: [
-                      Container(
-                        height: 48,
-                        width: 48,
-                        decoration: BoxDecoration(
-                          gradient: const LinearGradient(
-                            colors: [Color(0xFF22C55E), Color(0xFF2563EB)],
-                            begin: Alignment.topLeft,
-                            end: Alignment.bottomRight,
+                      Builder(builder: (context) {
+                        final logoBg = context.watch<AppState>().logoBgColor;
+                        return Container(
+                          height: 48,
+                          width: 48,
+                          decoration: BoxDecoration(
+                            color: logoBg,
+                            borderRadius: BorderRadius.circular(16),
                           ),
-                          borderRadius: BorderRadius.circular(16),
-                        ),
-                        child: Padding(
-                          padding: const EdgeInsets.all(7),
-                          child: Image.asset(
-                            'assets/ai_app_logo.png',
-                            fit: BoxFit.contain,
+                          child: Padding(
+                            padding: const EdgeInsets.all(7),
+                            child: Image.asset(
+                              'assets/ai_app_logo.png',
+                              fit: BoxFit.contain,
+                            ),
                           ),
-                        ),
-                      ),
+                        );
+                      }),
                       const SizedBox(width: 14),
                       const Expanded(
                         child: Column(

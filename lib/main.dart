@@ -1,6 +1,8 @@
 import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import 'screens/splash_screen.dart';
+import 'providers/app_state.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -9,7 +11,10 @@ Future<void> main() async {
   } catch (_) {
     // Continue without a local secret file; GroqService has a safe fallback.
   }
-  runApp(const MyApp());
+  runApp(ChangeNotifierProvider(
+    create: (_) => AppState(),
+    child: const MyApp(),
+  ));
 }
 
 class MyApp extends StatelessWidget {

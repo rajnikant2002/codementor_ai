@@ -1,8 +1,10 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 import 'home_screen.dart';
+import '../providers/app_state.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
@@ -65,32 +67,31 @@ class _SplashScreenState extends State<SplashScreen> {
                 child: Column(
                   mainAxisSize: MainAxisSize.min,
                   children: [
-                    Container(
-                      height: 92,
-                      width: 92,
-                      decoration: BoxDecoration(
-                        gradient: const LinearGradient(
-                          colors: [Color(0xFF22C55E), Color(0xFF2563EB)],
-                          begin: Alignment.topLeft,
-                          end: Alignment.bottomRight,
+                    Builder(builder: (context) {
+                      final logoBg = context.watch<AppState>().logoBgColor;
+                      return Container(
+                        height: 92,
+                        width: 92,
+                        decoration: BoxDecoration(
+                          color: logoBg,
+                          borderRadius: BorderRadius.circular(28),
+                          boxShadow: const [
+                            BoxShadow(
+                              color: Color(0x663B82F6),
+                              blurRadius: 30,
+                              offset: Offset(0, 18),
+                            ),
+                          ],
                         ),
-                        borderRadius: BorderRadius.circular(28),
-                        boxShadow: const [
-                          BoxShadow(
-                            color: Color(0x663B82F6),
-                            blurRadius: 30,
-                            offset: Offset(0, 18),
+                        child: Padding(
+                          padding: const EdgeInsets.all(14),
+                          child: Image.asset(
+                            'assets/ai_app_logo.png',
+                            fit: BoxFit.contain,
                           ),
-                        ],
-                      ),
-                      child: Padding(
-                        padding: const EdgeInsets.all(14),
-                        child: Image.asset(
-                          'assets/ai_app_logo.png',
-                          fit: BoxFit.contain,
                         ),
-                      ),
-                    ),
+                      );
+                    }),
                     const SizedBox(height: 22),
                     const Text(
                       'CareerPilot AI',
