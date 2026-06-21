@@ -8,9 +8,7 @@ class ResultScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('Analysis Result'),
-      ),
+      appBar: AppBar(title: const Text('Analysis Result')),
       body: Container(
         decoration: const BoxDecoration(
           gradient: LinearGradient(
@@ -42,7 +40,10 @@ class ResultScreen extends StatelessWidget {
                     SizedBox(height: 14),
                     Text(
                       'Your review is ready',
-                      style: TextStyle(fontSize: 24, fontWeight: FontWeight.w800),
+                      style: TextStyle(
+                        fontSize: 24,
+                        fontWeight: FontWeight.w800,
+                      ),
                     ),
                     SizedBox(height: 8),
                     Text(

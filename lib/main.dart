@@ -28,9 +28,9 @@ class MyApp extends StatelessWidget {
           centerTitle: false,
         ),
         textTheme: ThemeData.dark().textTheme.apply(
-              bodyColor: Colors.white,
-              displayColor: Colors.white,
-            ),
+          bodyColor: Colors.white,
+          displayColor: Colors.white,
+        ),
       ),
       home: const HomeScreen(),
     );

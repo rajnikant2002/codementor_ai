@@ -77,7 +77,10 @@ class _HomeScreenState extends State<HomeScreen> {
                           ),
                           borderRadius: BorderRadius.circular(14),
                         ),
-                        child: const Icon(Icons.auto_awesome, color: Colors.white),
+                        child: const Icon(
+                          Icons.auto_awesome,
+                          color: Colors.white,
+                        ),
                       ),
                       const SizedBox(width: 12),
                       const Column(
@@ -85,7 +88,10 @@ class _HomeScreenState extends State<HomeScreen> {
                         children: [
                           Text(
                             'CodeMentor AI',
-                            style: TextStyle(fontSize: 20, fontWeight: FontWeight.w800),
+                            style: TextStyle(
+                              fontSize: 20,
+                              fontWeight: FontWeight.w800,
+                            ),
                           ),
                           SizedBox(height: 2),
                           Text(
@@ -172,14 +178,17 @@ class _HomeScreenState extends State<HomeScreen> {
                   const SizedBox(height: 18),
                   Row(
                     children: [
-                      const Icon(Icons.shield_outlined, size: 18, color: Colors.white54),
+                      const Icon(
+                        Icons.shield_outlined,
+                        size: 18,
+                        color: Colors.white54,
+                      ),
                       const SizedBox(width: 8),
                       Expanded(
                         child: Text(
                           'Your code stays in this session only.',
-                          style: Theme.of(context).textTheme.bodySmall?.copyWith(
-                                color: Colors.white60,
-                              ),
+                          style: Theme.of(context).textTheme.bodySmall
+                              ?.copyWith(color: Colors.white60),
                         ),
                       ),
                     ],
@@ -211,7 +220,11 @@ class _BackgroundGlow extends StatelessWidget {
           const DecoratedBox(
             decoration: BoxDecoration(
               gradient: LinearGradient(
-                colors: [Color(0xFF0B1020), Color(0xFF111A33), Color(0xFF0B1020)],
+                colors: [
+                  Color(0xFF0B1020),
+                  Color(0xFF111A33),
+                  Color(0xFF0B1020),
+                ],
                 begin: Alignment.topCenter,
                 end: Alignment.bottomCenter,
               ),
@@ -318,10 +331,7 @@ class _SectionLabel extends StatelessWidget {
           style: const TextStyle(fontSize: 16, fontWeight: FontWeight.w700),
         ),
         const SizedBox(height: 4),
-        Text(
-          hint,
-          style: const TextStyle(color: Colors.white54),
-        ),
+        Text(hint, style: const TextStyle(color: Colors.white54)),
       ],
     );
   }

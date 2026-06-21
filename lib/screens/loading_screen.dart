@@ -6,11 +6,7 @@ class LoadingScreen extends StatefulWidget {
   final String code;
   final String language;
 
-  const LoadingScreen({
-    super.key,
-    required this.code,
-    required this.language,
-  });
+  const LoadingScreen({super.key, required this.code, required this.language});
 
   @override
   State<LoadingScreen> createState() => _LoadingScreenState();
@@ -28,7 +24,8 @@ class _LoadingScreenState extends State<LoadingScreen> {
 
     if (!mounted) return;
 
-    final result = '''
+    final result =
+        '''
 Language: ${widget.language}
 
 High-level feedback
@@ -47,9 +44,7 @@ ${widget.code.trim()}
 
     Navigator.pushReplacement(
       context,
-      MaterialPageRoute(
-        builder: (_) => ResultScreen(result: result),
-      ),
+      MaterialPageRoute(builder: (_) => ResultScreen(result: result)),
     );
   }
 
@@ -99,9 +94,9 @@ ${widget.code.trim()}
                   'Checking structure, clarity, and opportunities to improve.',
                   textAlign: TextAlign.center,
                   style: Theme.of(context).textTheme.bodySmall?.copyWith(
-                        color: Colors.white70,
-                        height: 1.4,
-                      ),
+                    color: Colors.white70,
+                    height: 1.4,
+                  ),
                 ),
               ],
             ),
