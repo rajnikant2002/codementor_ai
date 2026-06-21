@@ -30,9 +30,7 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text("CodeMentor AI"),
-      ),
+      appBar: AppBar(title: const Text("CodeMentor AI")),
       body: Padding(
         padding: const EdgeInsets.all(16),
         child: Column(
@@ -43,7 +41,10 @@ class _HomeScreenState extends State<HomeScreen> {
                 DropdownMenuItem(value: "C++", child: Text("C++")),
                 DropdownMenuItem(value: "Java", child: Text("Java")),
                 DropdownMenuItem(value: "Python", child: Text("Python")),
-                DropdownMenuItem(value: "JavaScript", child: Text("JavaScript")),
+                DropdownMenuItem(
+                  value: "JavaScript",
+                  child: Text("JavaScript"),
+                ),
               ],
               onChanged: (value) {
                 setState(() {
