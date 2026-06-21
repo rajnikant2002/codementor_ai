@@ -6,14 +6,11 @@ class AboutScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text("About"),
-      ),
+      appBar: AppBar(title: const Text("About")),
       body: const Padding(
         padding: EdgeInsets.all(16),
-        child: Text(
-          '''
-CodeMentor AI
+        child: Text('''
+CareerPilot AI
 
 An AI-powered platform that helps students:
 
@@ -24,9 +21,7 @@ An AI-powered platform that helps students:
 • Analyze complexity
 
 Built using Flutter and Gemini AI.
-''',
-          style: TextStyle(fontSize: 16),
-        ),
+''', style: TextStyle(fontSize: 16)),
       ),
     );
   }

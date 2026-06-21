@@ -44,9 +44,12 @@ class _HomeScreenState extends State<HomeScreen> {
                           ),
                           borderRadius: BorderRadius.circular(16),
                         ),
-                        child: const Icon(
-                          Icons.cases_outlined,
-                          color: Colors.white,
+                        child: Padding(
+                          padding: const EdgeInsets.all(7),
+                          child: Image.asset(
+                            'assets/ai_app_logo.png',
+                            fit: BoxFit.contain,
+                          ),
                         ),
                       ),
                       const SizedBox(width: 14),
