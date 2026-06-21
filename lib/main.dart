@@ -1,7 +1,14 @@
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:flutter/material.dart';
 import 'screens/home_screen.dart';
 
-void main() {
+Future<void> main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  try {
+    await dotenv.load(fileName: '.env');
+  } catch (_) {
+    // Continue without a local secret file; GroqService has a safe fallback.
+  }
   runApp(const MyApp());
 }
 
@@ -10,9 +17,10 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    const seedColor = Color(0xFF4F46E5);
+    const seedColor = Color(0xFF2563EB);
 
     return MaterialApp(
+      title: 'CareerPilot AI',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
         useMaterial3: true,
