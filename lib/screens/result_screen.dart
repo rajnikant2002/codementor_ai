@@ -44,7 +44,10 @@ class ResultScreen extends StatelessWidget {
                     SizedBox(height: 14),
                     Text(
                       'Your result is ready',
-                      style: TextStyle(fontSize: 24, fontWeight: FontWeight.w800),
+                      style: TextStyle(
+                        fontSize: 24,
+                        fontWeight: FontWeight.w800,
+                      ),
                     ),
                     SizedBox(height: 8),
                     Text(

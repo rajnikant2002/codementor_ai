@@ -12,9 +12,9 @@ class HomeScreen extends StatefulWidget {
 
 class _HomeScreenState extends State<HomeScreen> {
   void openTool(CareerTool tool) {
-    Navigator.of(context).push(
-      MaterialPageRoute(builder: (_) => ToolInputScreen(tool: tool)),
-    );
+    Navigator.of(
+      context,
+    ).push(MaterialPageRoute(builder: (_) => ToolInputScreen(tool: tool)));
   }
 
   @override
@@ -44,7 +44,10 @@ class _HomeScreenState extends State<HomeScreen> {
                           ),
                           borderRadius: BorderRadius.circular(16),
                         ),
-                        child: const Icon(Icons.cases_outlined, color: Colors.white),
+                        child: const Icon(
+                          Icons.cases_outlined,
+                          color: Colors.white,
+                        ),
                       ),
                       const SizedBox(width: 14),
                       const Expanded(
@@ -83,10 +86,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   ...tools.map(
                     (tool) => Padding(
                       padding: const EdgeInsets.only(bottom: 12),
-                      child: _ToolCard(
-                        tool: tool,
-                        onTap: () => openTool(tool),
-                      ),
+                      child: _ToolCard(tool: tool, onTap: () => openTool(tool)),
                     ),
                   ),
                 ],
@@ -285,7 +285,10 @@ class _ToolCard extends StatelessWidget {
                     const SizedBox(height: 5),
                     Text(
                       tool.subtitle,
-                      style: const TextStyle(color: Colors.white70, height: 1.35),
+                      style: const TextStyle(
+                        color: Colors.white70,
+                        height: 1.35,
+                      ),
                     ),
                     const SizedBox(height: 10),
                     Text(

@@ -8,7 +8,8 @@ import '../models/career_tool.dart';
 
 class GroqService {
   GroqService({String? apiKey})
-    : _apiKey = apiKey ??
+    : _apiKey =
+          apiKey ??
           dotenv.env['GROQ_API_KEY'] ??
           const String.fromEnvironment('GROQ_API_KEY');
 
@@ -49,10 +50,7 @@ class GroqService {
           body: jsonEncode({
             'model': modelName,
             'messages': [
-              {
-                'role': 'user',
-                'content': prompt,
-              },
+              {'role': 'user', 'content': prompt},
             ],
             'temperature': 0.2,
             'max_tokens': 2048,
@@ -61,7 +59,8 @@ class GroqService {
 
         if (response.statusCode < 200 || response.statusCode >= 300) {
           final body = response.body;
-          final shouldRetry = body.contains('model_decommissioned') ||
+          final shouldRetry =
+              body.contains('model_decommissioned') ||
               body.contains('no longer supported') ||
               body.contains('invalid_request_error');
 
@@ -108,7 +107,10 @@ class GroqService {
   }
 
   Future<List<String>> _resolveModelCandidates() async {
-    final override = const String.fromEnvironment('GROQ_MODEL', defaultValue: '');
+    final override = const String.fromEnvironment(
+      'GROQ_MODEL',
+      defaultValue: '',
+    );
     if (override.isNotEmpty) {
       return [override];
     }

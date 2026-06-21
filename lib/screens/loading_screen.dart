@@ -9,11 +9,7 @@ class LoadingScreen extends StatefulWidget {
   final CareerTool tool;
   final Map<String, String> inputs;
 
-  const LoadingScreen({
-    super.key,
-    required this.tool,
-    required this.inputs,
-  });
+  const LoadingScreen({super.key, required this.tool, required this.inputs});
 
   @override
   State<LoadingScreen> createState() => _LoadingScreenState();
@@ -114,9 +110,9 @@ class _LoadingScreenState extends State<LoadingScreen> {
                   widget.tool.subtitle,
                   textAlign: TextAlign.center,
                   style: Theme.of(context).textTheme.bodySmall?.copyWith(
-                        color: Colors.white70,
-                        height: 1.4,
-                      ),
+                    color: Colors.white70,
+                    height: 1.4,
+                  ),
                 ),
                 const SizedBox(height: 18),
                 const SizedBox(
@@ -128,9 +124,9 @@ class _LoadingScreenState extends State<LoadingScreen> {
                 Text(
                   'Preparing the response and formatting it for you.',
                   textAlign: TextAlign.center,
-                  style: Theme.of(context).textTheme.bodySmall?.copyWith(
-                        color: Colors.white54,
-                      ),
+                  style: Theme.of(
+                    context,
+                  ).textTheme.bodySmall?.copyWith(color: Colors.white54),
                 ),
               ],
             ),

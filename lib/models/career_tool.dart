@@ -32,170 +32,190 @@ enum CareerTool {
 
 extension CareerToolX on CareerTool {
   String get title => switch (this) {
-        CareerTool.codeReview => 'Code Review',
-        CareerTool.atsResumeScore => 'ATS Resume Score',
-        CareerTool.resumeBuilder => 'AI Resume Builder',
-        CareerTool.projectGenerator => 'Project Ideas',
-        CareerTool.interviewQuestions => 'Interview Questions',
-        CareerTool.learningRoadmap => 'Learning Roadmap',
-        CareerTool.careerGuidance => 'Career Guidance',
-      };
+    CareerTool.codeReview => 'Code Review',
+    CareerTool.atsResumeScore => 'ATS Resume Score',
+    CareerTool.resumeBuilder => 'AI Resume Builder',
+    CareerTool.projectGenerator => 'Project Ideas',
+    CareerTool.interviewQuestions => 'Interview Questions',
+    CareerTool.learningRoadmap => 'Learning Roadmap',
+    CareerTool.careerGuidance => 'Career Guidance',
+  };
 
   String get subtitle => switch (this) {
-        CareerTool.codeReview => 'Analyze bugs, complexity, and fixes.',
-        CareerTool.atsResumeScore => 'Check how well your resume matches ATS filters.',
-        CareerTool.resumeBuilder => 'Turn rough notes into a polished resume.',
-        CareerTool.projectGenerator => 'Generate project ideas from your skills.',
-        CareerTool.interviewQuestions => 'Get role-specific interview practice questions.',
-        CareerTool.learningRoadmap => 'Plan the skills to learn week by week.',
-        CareerTool.careerGuidance => 'Get focused guidance on your next move.',
-      };
+    CareerTool.codeReview => 'Analyze bugs, complexity, and fixes.',
+    CareerTool.atsResumeScore =>
+      'Check how well your resume matches ATS filters.',
+    CareerTool.resumeBuilder => 'Turn rough notes into a polished resume.',
+    CareerTool.projectGenerator => 'Generate project ideas from your skills.',
+    CareerTool.interviewQuestions =>
+      'Get role-specific interview practice questions.',
+    CareerTool.learningRoadmap => 'Plan the skills to learn week by week.',
+    CareerTool.careerGuidance => 'Get focused guidance on your next move.',
+  };
 
   String get promptLabel => switch (this) {
-        CareerTool.codeReview => 'Review Code',
-        CareerTool.atsResumeScore => 'Score Resume',
-        CareerTool.resumeBuilder => 'Build Resume',
-        CareerTool.projectGenerator => 'Generate Ideas',
-        CareerTool.interviewQuestions => 'Get Questions',
-        CareerTool.learningRoadmap => 'Create Roadmap',
-        CareerTool.careerGuidance => 'Get Guidance',
-      };
+    CareerTool.codeReview => 'Review Code',
+    CareerTool.atsResumeScore => 'Score Resume',
+    CareerTool.resumeBuilder => 'Build Resume',
+    CareerTool.projectGenerator => 'Generate Ideas',
+    CareerTool.interviewQuestions => 'Get Questions',
+    CareerTool.learningRoadmap => 'Create Roadmap',
+    CareerTool.careerGuidance => 'Get Guidance',
+  };
 
   IconData get icon => switch (this) {
-        CareerTool.codeReview => Icons.code,
-        CareerTool.atsResumeScore => Icons.description_outlined,
-        CareerTool.resumeBuilder => Icons.badge_outlined,
-        CareerTool.projectGenerator => Icons.lightbulb_outline,
-        CareerTool.interviewQuestions => Icons.quiz_outlined,
-        CareerTool.learningRoadmap => Icons.route_outlined,
-        CareerTool.careerGuidance => Icons.tips_and_updates_outlined,
-      };
+    CareerTool.codeReview => Icons.code,
+    CareerTool.atsResumeScore => Icons.description_outlined,
+    CareerTool.resumeBuilder => Icons.badge_outlined,
+    CareerTool.projectGenerator => Icons.lightbulb_outline,
+    CareerTool.interviewQuestions => Icons.quiz_outlined,
+    CareerTool.learningRoadmap => Icons.route_outlined,
+    CareerTool.careerGuidance => Icons.tips_and_updates_outlined,
+  };
 
   List<ToolField> get fields => switch (this) {
-        CareerTool.codeReview => const [
-            ToolField(
-              key: 'language',
-              label: 'Programming language',
-              hint: 'Choose the syntax you want reviewed',
-              type: ToolFieldType.choice,
-              options: ['C++', 'Java', 'Python', 'JavaScript'],
-            ),
-            ToolField(
-              key: 'code',
-              label: 'Code',
-              hint: 'Paste the code you want reviewed',
-              type: ToolFieldType.multiline,
-              maxLines: 12,
-            ),
-          ],
-        CareerTool.atsResumeScore => const [
-            ToolField(
-              key: 'resume',
-              label: 'Resume text',
-              hint: 'Paste your resume exactly as you want it scored',
-              type: ToolFieldType.multiline,
-              maxLines: 14,
-            ),
-          ],
-        CareerTool.resumeBuilder => const [
-            ToolField(
-              key: 'name',
-              label: 'Name',
-              hint: 'Full name',
-            ),
-            ToolField(
-              key: 'email',
-              label: 'Email',
-              hint: 'Email address',
-            ),
-            ToolField(
-              key: 'skills',
-              label: 'Skills',
-              hint: 'Flutter, Firebase, Dart, API integration',
-              type: ToolFieldType.multiline,
-              maxLines: 3,
-            ),
-            ToolField(
-              key: 'projects',
-              label: 'Projects',
-              hint: 'Key projects, impact, links, or bullet ideas',
-              type: ToolFieldType.multiline,
-              maxLines: 4,
-            ),
-            ToolField(
-              key: 'education',
-              label: 'Education',
-              hint: 'Degree, institution, year',
-              type: ToolFieldType.multiline,
-              maxLines: 3,
-            ),
-            ToolField(
-              key: 'experience',
-              label: 'Experience',
-              hint: 'Internships, jobs, freelance work',
-              type: ToolFieldType.multiline,
-              maxLines: 4,
-            ),
-          ],
-        CareerTool.projectGenerator => const [
-            ToolField(
-              key: 'skills',
-              label: 'Skills',
-              hint: 'Flutter Firebase Gemini UI/UX',
-              type: ToolFieldType.multiline,
-              maxLines: 3,
-            ),
-          ],
-        CareerTool.interviewQuestions => const [
-            ToolField(
-              key: 'role',
-              label: 'Role',
-              hint: 'Flutter Developer, Backend Intern, etc.',
-            ),
-          ],
-        CareerTool.learningRoadmap => const [
-            ToolField(
-              key: 'goal',
-              label: 'Goal',
-              hint: 'Become a Flutter developer, learn system design, etc.',
-              type: ToolFieldType.multiline,
-              maxLines: 3,
-            ),
-          ],
-        CareerTool.careerGuidance => const [
-            ToolField(
-              key: 'background',
-              label: 'Background',
-              hint: 'Current role, education, or experience',
-              type: ToolFieldType.multiline,
-              maxLines: 3,
-            ),
-            ToolField(
-              key: 'goal',
-              label: 'Target',
-              hint: 'What you want to achieve next',
-              type: ToolFieldType.multiline,
-              maxLines: 3,
-            ),
-          ],
-      };
+    CareerTool.codeReview => const [
+      ToolField(
+        key: 'language',
+        label: 'Programming language',
+        hint: 'Choose the syntax you want reviewed',
+        type: ToolFieldType.choice,
+        options: ['C++', 'Java', 'Python', 'JavaScript'],
+      ),
+      ToolField(
+        key: 'code',
+        label: 'Code',
+        hint: 'Paste the code you want reviewed',
+        type: ToolFieldType.multiline,
+        maxLines: 12,
+      ),
+    ],
+    CareerTool.atsResumeScore => const [
+      ToolField(
+        key: 'resume',
+        label: 'Resume text',
+        hint: 'Paste your resume exactly as you want it scored',
+        type: ToolFieldType.multiline,
+        maxLines: 14,
+      ),
+    ],
+    CareerTool.resumeBuilder => const [
+      ToolField(key: 'name', label: 'Name', hint: 'Full name'),
+      ToolField(key: 'email', label: 'Email', hint: 'Email address'),
+      ToolField(
+        key: 'skills',
+        label: 'Skills',
+        hint: 'Flutter, Firebase, Dart, API integration',
+        type: ToolFieldType.multiline,
+        maxLines: 3,
+      ),
+      ToolField(
+        key: 'projects',
+        label: 'Projects',
+        hint: 'Key projects, impact, links, or bullet ideas',
+        type: ToolFieldType.multiline,
+        maxLines: 4,
+      ),
+      ToolField(
+        key: 'education',
+        label: 'Education',
+        hint: 'Degree, institution, year',
+        type: ToolFieldType.multiline,
+        maxLines: 3,
+      ),
+      ToolField(
+        key: 'experience',
+        label: 'Experience',
+        hint: 'Internships, jobs, freelance work',
+        type: ToolFieldType.multiline,
+        maxLines: 4,
+      ),
+    ],
+    CareerTool.projectGenerator => const [
+      ToolField(
+        key: 'skills',
+        label: 'Skills',
+        hint: 'Flutter Firebase Gemini UI/UX',
+        type: ToolFieldType.multiline,
+        maxLines: 3,
+      ),
+    ],
+    CareerTool.interviewQuestions => const [
+      ToolField(
+        key: 'role',
+        label: 'Role',
+        hint: 'Flutter Developer, Backend Intern, etc.',
+      ),
+    ],
+    CareerTool.learningRoadmap => const [
+      ToolField(
+        key: 'goal',
+        label: 'Goal',
+        hint: 'Become a Flutter developer, learn system design, etc.',
+        type: ToolFieldType.multiline,
+        maxLines: 3,
+      ),
+    ],
+    CareerTool.careerGuidance => const [
+      ToolField(
+        key: 'background',
+        label: 'Background',
+        hint: 'Current role, education, or experience',
+        type: ToolFieldType.multiline,
+        maxLines: 3,
+      ),
+      ToolField(
+        key: 'goal',
+        label: 'Target',
+        hint: 'What you want to achieve next',
+        type: ToolFieldType.multiline,
+        maxLines: 3,
+      ),
+    ],
+  };
 
   List<String> get expectedSections => switch (this) {
-        CareerTool.codeReview => const ['Bugs', 'Complexity', 'Improvements', 'Fixed Code'],
-        CareerTool.atsResumeScore => const ['ATS Score', 'Strengths', 'Weaknesses', 'Suggestions'],
-        CareerTool.resumeBuilder => const [
-            'Header',
-            'Professional Summary',
-            'Skills',
-            'Projects',
-            'Education',
-            'Experience',
-          ],
-        CareerTool.projectGenerator => const ['Project Idea', 'Features', 'Tech Stack'],
-        CareerTool.interviewQuestions => const ['Questions'],
-        CareerTool.learningRoadmap => const ['Week 1', 'Week 2', 'Week 3', 'Week 4', 'Next Steps'],
-        CareerTool.careerGuidance => const ['Snapshot', 'Strengths', 'Gaps', 'Action Plan', '30-Day Plan'],
-      };
+    CareerTool.codeReview => const [
+      'Bugs',
+      'Complexity',
+      'Improvements',
+      'Fixed Code',
+    ],
+    CareerTool.atsResumeScore => const [
+      'ATS Score',
+      'Strengths',
+      'Weaknesses',
+      'Suggestions',
+    ],
+    CareerTool.resumeBuilder => const [
+      'Header',
+      'Professional Summary',
+      'Skills',
+      'Projects',
+      'Education',
+      'Experience',
+    ],
+    CareerTool.projectGenerator => const [
+      'Project Idea',
+      'Features',
+      'Tech Stack',
+    ],
+    CareerTool.interviewQuestions => const ['Questions'],
+    CareerTool.learningRoadmap => const [
+      'Week 1',
+      'Week 2',
+      'Week 3',
+      'Week 4',
+      'Next Steps',
+    ],
+    CareerTool.careerGuidance => const [
+      'Snapshot',
+      'Strengths',
+      'Gaps',
+      'Action Plan',
+      '30-Day Plan',
+    ],
+  };
 
   String buildPrompt(Map<String, String> inputs) {
     switch (this) {

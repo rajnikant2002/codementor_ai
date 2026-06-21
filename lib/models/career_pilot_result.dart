@@ -79,7 +79,8 @@ class _SectionParser {
       if (matched != null) {
         flush();
         currentTitle = matched.title;
-        if (matched.inlineBody != null && matched.inlineBody!.trim().isNotEmpty) {
+        if (matched.inlineBody != null &&
+            matched.inlineBody!.trim().isNotEmpty) {
           buffer.writeln(matched.inlineBody!.trim());
         }
         continue;
